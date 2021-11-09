@@ -12,6 +12,7 @@ urlpatterns = [
         "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     ),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/', include("src.api.urls", namespace="movie_api")),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
